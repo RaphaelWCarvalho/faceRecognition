@@ -22,7 +22,11 @@ while True:
 
     # Draw a rectangle around recognized faces 
     for (x, y, w, h) in faces:
-        cv2.rectangle(frame, (x, y), (x+w, y+h), (50, 50, 200), 2)
+        texto = str(len(faces)) + " rostos"
+        cv2.putText(frame, texto, (100, 100), cv2.FONT_HERSHEY_SIMPLEX, 2, 255)
+
+        #cv2.rectangle(frame, (x, y), (x+w, y+h), (50, 50, 200), 2)
+        cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 256, 256), 2)
 
     # Display the resulting frame
     cv2.imshow('Video', frame)
